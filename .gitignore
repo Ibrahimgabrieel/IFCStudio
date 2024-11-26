@@ -1,0 +1,30 @@
+plaintext
+# Dependencies
+/node_modules    # Contains all installed npm packages, very large and can be recreated from package.json
+/.pnp           # Plug'n'Play files for Yarn (alternative to npm)
+.pnp.js         # Plug'n'Play configuration file
+
+# Testing
+/coverage       # Contains test coverage reports, generated during testing
+
+# Production
+/build          # Contains compiled/bundled code for production
+/dist           # Alternative name for build directory
+
+# Misc
+.DS_Store       # MacOS system file that stores folder attributes
+.env.local      # Environment variables for local development
+.env.development.local   # Environment variables for development
+.env.test.local         # Environment variables for testing
+.env.production.local   # Environment variables for production
+
+# Debug logs
+npm-debug.log*  # npm error logs
+yarn-debug.log* # Yarn error logs
+yarn-error.log* # Yarn error logs
+
+# IDE specific files
+.idea           # IntelliJ/WebStorm project settings
+.vscode         # Visual Studio Code settings
+*.swp          # Vim temporary files
+*.swo          # Vim temporary files
