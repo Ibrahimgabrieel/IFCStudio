@@ -6,9 +6,11 @@
   "main": "./web-ifc-api-node.js",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js",
+    "build": "tsc && webpack --config config/webpack.prod.js",
     "test": "jest --config config/jest.config.js",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch"
   },
   "exports": {
     ".": {
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
     "@types/jest": "^29.5.11",
     "@types/three": "^0.160.0",
     "adm-zip": "^0.5.10",
@@ -42,9 +45,10 @@
     "style-loader": "^4.0.0",
     "three": "^0.160.1",
     "ts-jest": "^29.1.1",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.1",
     "typedoc": "^0.25.4",
-    "typescript": "^5.3.3",
+    "typescript": "^5.7.2",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0",
@@ -61,8 +65,10 @@
   },
   "dependencies": {
     "@thatopen/components": "^2.3.19",
+    "@thatopen/components-front": "^2.4.2",
     "@thatopen/fragments": "^2.3.0",
     "@thatopen/ui": "^2.3.2",
+    "@thatopen/ui-obc": "^2.4.1",
     "web-ifc": "^0.0.59"
   }
 }

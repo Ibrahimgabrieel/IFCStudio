@@ -43,6 +43,8 @@ export class World {
         }
     }
 
+    
+
     removeObject(name) {
         const object = this.objects.get(name);
         if (object) {
