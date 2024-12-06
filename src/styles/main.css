@@ -34,11 +34,17 @@ body {
   visibility: hidden;
 }
 
-/* Relations tree panel styles */
-bim-panel {
-  height: 100%;
-  overflow: auto;
-}
+
+bim-panel {  
+  height: 100%;  
+  overflow: auto;  
+}  
+
+bim-grid {  
+  width: 100%;  
+  height: 100vh;  
+}  
+
 
 bim-panel-section {
   padding: 1rem;

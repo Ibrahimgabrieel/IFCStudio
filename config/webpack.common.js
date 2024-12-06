@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/main.ts'), // Changed to .ts
+  entry: path.resolve(__dirname, '../src/main.ts'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.[contenthash].js',
@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/, // Added TypeScript support
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: [
           {
@@ -21,14 +21,14 @@ module.exports = {
             options: {
               presets: [
                 '@babel/preset-env',
-                '@babel/preset-typescript' // Added TypeScript preset
+                '@babel/preset-typescript'
               ]
             }
           },
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true // Speeds up compilation
+              transpileOnly: true
             }
           }
         ]
@@ -48,6 +48,14 @@ module.exports = {
       {
         test: /\.wasm$/,
         type: 'asset/resource'
+      },
+      // Add IFC file handling
+      {
+        test: /\.ifc$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'ifc/[name][ext]'
+        }
       }
     ]
   },
@@ -72,15 +80,23 @@ module.exports = {
           from: path.resolve(__dirname, '../public/assets'),
           to: 'assets',
           noErrorOnMissing: true
+        },
+        // Add IFC files copying
+        {
+          from: path.resolve(__dirname, '../public/ifc'),
+          to: 'ifc',
+          noErrorOnMissing: true
         }
       ]
     })
   ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'], // Added TypeScript extensions
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../public/assets')
+      'assets': path.resolve(__dirname, '../public/assets'),
+      // Add IFC alias if needed
+      'ifc': path.resolve(__dirname, '../public/ifc')
     }
   },
   optimization: {
@@ -97,11 +113,11 @@ module.exports = {
     }
   },
   performance: {
-    hints: false, // Disable size warnings for entry points
+    hints: false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
   },
   stats: {
-    errorDetails: true // Show detailed error messages
+    errorDetails: true
   }
 };
