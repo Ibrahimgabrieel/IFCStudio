@@ -10,12 +10,13 @@ export class ClassificationsManager {
     async classifyModel(model) {  
         this.classifier.byEntity(model);  
         await this.classifier.byPredefinedType(model);  
-
+            
         this.classifications = [  
             { system: "entities", label: "Entities" },  
             { system: "predefinedTypes", label: "Predefined Types" }  
         ];  
-
+        // console.log(this.classifications);
+      
         return this.classifications;  
     }  
 
