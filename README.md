@@ -66,18 +66,16 @@ This project consists of two main components:
 ### Steps
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/Ibrahimgabrieel/IFCStudio.git
-   ```
-    ```bash
-     npm install
-   ```
-  ```bash
+  ```
+ ```bash
+    npm install
+  ```
+```bash
    npm run dev
   ```
-   ```bash
-   npm run build
-   ```
+
    
 ## Current Progress
 
