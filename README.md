@@ -1,5 +1,21 @@
 # IFC Studio - Modern BIM Web Application
 
+
+![image](https://github.com/user-attachments/assets/e65b1b02-ab00-405b-8b39-5dc63879342d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Introduction
 
 IFC Studio is a web-based Building Information Modeling (BIM) application that revolutionizes the traditional construction design workflow. While architects and engineers traditionally use software like 3ds Max for prototyping and construction modeling, IFC Studio brings this capability to the web with real-time collaboration features.
